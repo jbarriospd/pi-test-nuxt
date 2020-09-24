@@ -37,7 +37,7 @@
     </v-app-bar>
     <v-main>
       <v-container>
-        <nuxt />
+          <nuxt />
       </v-container>
     </v-main>
     <v-navigation-drawer
@@ -84,6 +84,9 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  padding: 0;
+}
 .title-menu {
   text-align: center;
   font-weight: 700;

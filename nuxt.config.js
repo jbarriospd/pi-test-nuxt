@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import ProfileService from './services/ProfileService.js'
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -64,5 +65,15 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  generate: {
+    routes: () => {
+      return ProfileService.getUsers().then((response) => {
+        return response.data.map((user) => {
+          return '/user/' + user.id
+        })
+      })
+    }
   }
 }
